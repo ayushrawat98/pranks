@@ -1,0 +1,36 @@
+body{
+	line-height:1.6;
+	margin:20px 100px;
+}
+
+span.down{
+	display: inline-block;
+	animation-name: roundup;
+	animation-duration:4s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes roundup {
+  0%   {background-color:red; transform:rotate(0deg);}
+  25%  {background-color:white; transform:rotate(72deg);}
+  50%  {background-color:yellow; transform:rotate(144deg);}
+  75%  { background-color:white; transform:rotate(216deg);}
+  100% {background-color:red; transform:rotate(360deg);}
+}
+
+span.up{
+	display: inline-block;
+	animation-name: rounddown;
+	animation-duration:4s;
+	animation-iteration-count: infinite;
+
+}
+
+@keyframes rounddown {
+  0%   {background-color:red; transform:rotate(360deg);}
+  25%  { background-color:white; transform:rotate(216deg);}
+  50%  {background-color:yellow; transform:rotate(144deg);}
+  75%  {background-color:white;  transform:rotate(72deg);}
+  100% {background-color:red; transform:rotate(0deg);}
+}
+

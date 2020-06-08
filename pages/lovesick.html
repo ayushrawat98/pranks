@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Love Sick</title>
+	<style>
+		div{
+			width:500px	;
+			margin:10px auto;
+		}
+
+		button {
+			color:rgb(0, 0, 0);
+			font-size: large;
+			background-color: rgb(187, 41, 167);
+			border:none;
+			border-bottom: solid 2px black;
+			height:100px;
+			width:250px;
+			
+		}
+	</style>
+</head>
+<body>
+
+
+<audio src="../files/lovemachine.mp3" loop>
+</audio> 
+<div class="container">
+
+</div>
+<div>
+<button type='button'>Touch Here Gently!</button>
+</div>
+
+<script>
+	const a = document.querySelector('audio')
+	const cont = document.querySelector('.container')
+	const but = document.querySelector('button')
+
+	const div = document.createElement('div')
+	div.innerHTML = "<img src='../files/bk.png'><h1>Don't deny me this embrace!</h1>"
+	but.addEventListener('click', function(e){
+		a.play()
+		cont.appendChild(div)
+	})
+
+</script>
+</body>
+</html>

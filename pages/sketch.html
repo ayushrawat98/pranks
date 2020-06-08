@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Diddle doodle ur dik is now a noodle">
+    <title>Sketch A Nigger</title>
+
+    <style>
+        .container {
+            display: grid;
+            border: 3px solid;
+            width: 400px;
+            height: 400px;
+            grid-template-columns: repeat(16, 1fr);
+            grid-template-rows: repeat(16, 1fr);
+            margin: 50px auto;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container"></div>
+    <button type="button" class='clearbtn'>Clear</button>
+
+    <script>
+        const container = document.querySelector('.container');
+        const btn = document.querySelector('.clearbtn');
+
+        btn.addEventListener('click', () => {
+            const getbox = document.querySelectorAll('.childbox');
+            const arrbox = [...getbox];
+            arrbox.forEach((item) => {
+                item.style.backgroundColor = 'white';
+            });
+        });
+
+        function creategrid() {
+            let x = 0;
+            while (x < 256) {
+                const child = document.createElement('div');
+                child.classList.add('childbox');
+                child.addEventListener('mouseover', () => {
+                    child.style.backgroundColor = randomcolor();
+                });
+                container.appendChild(child);
+                ++x;
+            }
+        }
+
+        function randomcolor() {
+            return "#" + ((1 << 24) * Math.random() | 0).toString(16);
+        }
+
+        creategrid();
+    </script>
+
+</body>
+
+</html>

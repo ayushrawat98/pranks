@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Retard-0-meter</title>
+	<meta name="description" content="Find out how retarded you are.">
+
+	<style>
+		input[type="text"]{
+			border:2px solid;
+			padding: 10px;
+			width:90%;
+		}
+
+		button{
+			border:3px solid;
+			color:#fff;
+			background-color: #999;
+			border-radius: 5px;
+			padding: 10px 10px;
+			font-weight: bold;
+			margin:5vw 45vw 0vw 45vw;
+			width:150px;
+			height:90px;
+		}
+
+		p{
+			font-size: 50px;
+			text-align: center;
+		}
+	</style>
+
+</head>
+<body>
+
+	<form>
+		<div><label for="name">Name</label>
+			<input type="text" id="name">
+		</div>
+		<button onclick="retardo()" type="button">Find!</button>
+	</form>
+
+	<p id='ans'>
+	</p>
+
+
+	<script  defer>
+		function retardo(){
+			const b = document.getElementById('name').value
+			const c = b.toLowerCase()
+			if(c==='ayush'||c==='ayush rawat'){
+				document.getElementById('ans').innerHTML = "FUCK YOU, FAGGOT. HAHA"
+			}
+			else if(c==='rohit'||c==='rohit jakhmola'){
+				document.getElementById('ans').innerHTML = "100% retarded."
+			}
+			else if(c==='mohit'||c==='mohit upadhyay'){
+				document.getElementById('ans').innerHTML = "Fond of black men."
+			}
+			else{
+			const a = Math.floor((Math.random() * 100) + 1);
+			document.getElementById('ans').innerHTML = `${b} is ${a}% retarded`
+			}
+		}
+	</script>
+
+</body>
+</html>

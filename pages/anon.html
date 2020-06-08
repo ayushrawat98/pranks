@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anon</title>
+</head>
+<body>
+
+	<div class="container">	
+			<input type="text" id="inputname" placeholder="Enter name" required>
+			<input type="text" id="inputmsg" placeholder="Enter message" required>
+			<button >Send</button>
+	</div>
+	<div class="container output">
+	</div>
+
+
+	<!--Script-->
+		<script type="text/javascript">
+			const inpname = document.querySelector('#inputname');
+			const inpmsg  = document.querySelector('#inputmsg');		
+			const output  = document.querySelector('.output');
+			const sendbtn = document.querySelector('button');
+
+			sendbtn.addEventListener('click', () => {
+				const enteredname = inpname.value;
+				const enteredmsg  = inpmsg.value;
+
+				const newdiv = document.createElement('div');
+				newdiv.textContent = `${enteredname} : ${enteredmsg}`;
+				output.appendChild(newdiv);
+
+				inpmsg.value="";
+			});
+
+		</script>
+	<!--Script end-->
+
+
+</body>
+</html>

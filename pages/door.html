@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YO</title>
+
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+
+	
+
+		.container {
+			z-index:-1;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: bolder;
+			font-family: monospace;
+			font-size: 3rem;
+		}
+.doorfirst{
+	width: 100vw;
+			height: 100vh;
+			position:fixed;
+}
+		.doorleft{
+			
+			width: 50%;
+			height: 100%;
+			background: url("../files/left.jpg") 	center/cover ;
+			transition: all 0.3s linear;
+		}
+
+		.doorright{
+			position:absolute;
+			top:0;
+			right:0;
+			width: 50%;
+			height: 100%;
+			background: url("../files/right.jpg") 	center/cover ;
+			transition: all 0.3s linear;
+		}
+
+		.doorfirst:hover .doorleft{
+			transform:translateX(-100%);
+		}
+
+		.doorfirst:hover .doorright{
+			transform:translateX(100%);
+		}
+	</style>
+</head>
+<body>
+
+<div class="doorfirst">
+<div class="doorleft">
+</div>
+<div class="doorright">
+</div>
+</div>
+<div class="container">
+	Welcome to the rice field motherfreaker!!!!
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/1QEONNnWUpQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+
+</body>
+</html>

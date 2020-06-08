@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*------ navigation bar ------*/
+.navbar{
+    background-color: rgb(245, 207, 157);
+    width:100%;
+    height:60px;
+    display: flex;
+    align-items: center;
+    position:sticky;
+    top:0;
+    z-index:1;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.container {
+    width:90%;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+li{
+    float:left;
+}
+
+li a {
+    display: block;
+    padding:1rem 1rem;
+    text-align: centre;
+    text-decoration: none;
+  }
+li a:hover{
+    background-color: rgb(172, 127, 68);
+    color:whitesmoke
+}
+
+/*----navigation bar end-----*/
+
+/*----main pic-----*/
+.center-img {
+    min-height: calc(100vh - 60px);
+    background: url("../files/cherry-blossom-hirosaki-park-japan-xlarge.jpg") center/cover no-repeat;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-imgtxt{
+    background: rgba(255,255,255,0.6);
+    padding:5% 10%;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: monospace;
+    font-size: 2rem;
+    font-weight: bold;
+}
+/*-----main pic end -----*/
+
+
+
+/*-----3 sections ----*/
+.colms3 {
+    width:100%;
+    height:50vh;
+    background: rgba(167, 135, 135, 0.6);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    overflow:hidden;
+}
+
+.colms3 div {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: monospace;
+  text-align: center;
+}
+
+.colms3 div:hover{
+    transform: scale(1.2);
+    background-color:rgb(107, 86, 86);
+    color:white
+}
+
+.colms3 div h4{
+    font-size: 2rem;
+    padding:1rem 0;
+}
+
+.colms3 div p{
+    font-size: 1rem;
+}
+
+
+
+
+
+
+/*-----end of 3 sections ----*/
+
+/*-----Media query----*/
+
+/*-----End of Media query----*/

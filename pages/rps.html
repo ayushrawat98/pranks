@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissor</title>
+</head>
+
+<body>
+    <button type='button' id='rock'>Rock</button>
+    <button type='button' id='paper'>Paper</button>
+    <button type='button' id='scissor'>Scissor</button>
+
+    <div class="output"></div>
+    Your score: <span class="userscore"></span>
+    Computer score: <span class="compscore"></span>
+</body>
+
+<script>
+
+    const rock = document.querySelector('#rock');
+    const paper = document.querySelector('#paper');
+    const scissor = document.querySelector('#scissor');
+    const resultbox = document.querySelector('.output');
+    const userScore = document.querySelector('.userscore');
+    const compScore = document.querySelector('.compscore');
+    let userscore = 0;
+    let compscore = 0;
+
+    rock.addEventListener('click', () => {
+        play("rock");
+    });
+
+    paper.addEventListener('click', () => {
+        play("paper");
+    });
+
+    scissor.addEventListener('click', () => {
+        play("scissor");
+    });
+
+    function computer() {
+        let comm = ["rock", "paper", "scissor"];
+        return comm[Math.floor(Math.random() * 3)];
+    }
+
+    function check(comp, player) {
+        if (player === "rock" && comp === "scissor") {
+            ++userscore;
+            return "You win! Rock beat scissor";
+            
+        }
+        else if (player === "paper" && comp === "rock") {
+            ++userscore;
+            return "You win! Paper beat rock";
+        }
+        else if (player === "scissor" && comp === "paper") {
+            ++userscore;
+            return "You win! Scissor beat paper";
+        }
+        else if (player === "paper" && comp === "scissor") {
+            ++compscore;
+            return "You lose! Scissor beat paper";
+        }
+        else if (player === "scissor" && comp === "rock") {
+            ++compscore;
+            return "You lose! Rock beat scissor";
+        }
+        else if (player === "rock" && comp === "paper") {
+            ++compscore;
+            return "You lose! Paper beat rock";
+        }
+        else if (player === comp) {
+            return "owo";
+        }
+    }
+
+    function play(userInput) {
+        let comp = computer();
+        const content = document.createElement('div');
+        content.innerText = check(comp, userInput);
+        resultbox.appendChild(content);
+        if(userscore===5){
+            alert("You win!");
+            window.location.reload();
+        }
+        if(compscore===5){
+            alert("Computer win!");
+            window.location.reload();
+        }
+        userScore.innerText = userscore;
+        compScore.innerText = compscore;
+    }
+
+</script>
+
+</html>

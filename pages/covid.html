@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="Real time India covid tracker">
+	<title>Covid Tracker(Barebone)</title>
+</head>
+
+<style>
+*{
+	margin:0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: monospace;
+	font-size: 1rem;
+}
+
+table {
+	margin:0 auto;
+	max-width: 900px;
+	border : 1px solid;
+}
+
+td {
+	padding: 7px;
+}
+
+p {
+	text-align: center;
+}
+</style>
+<body>
+
+<table>
+	<tr>
+		<th>
+			State
+		</th>
+		<th>
+			Active
+		</th>
+		<th>
+			Recovered
+		</th>
+		<th>
+			Death
+		</th>
+	</tr>
+<!-- Why are you looking at code. Freak you, Mate!-->
+</table>
+
+<p>Data retrieved from https://api.covid19india.org/data.json </p>
+
+<script>
+
+const tab = document.querySelector('table');
+
+
+async function getData() {
+	const data = await fetch("https://api.covid19india.org/data.json");
+
+	const jsondata = await data.json();
+
+	const statedata = jsondata.statewise;
+
+	for(let i = 0; i < statedata.length; i++) {
+		const tabrow = document.createElement('tr');
+		const tabst = document.createElement('td');
+		const tabac = document.createElement('td');
+		const tabre = document.createElement('td');
+		const tabde = document.createElement('td');
+
+		tabst.textContent = statedata[i].state;
+		tabac.textContent = statedata[i].active;
+		tabre.textContent = statedata[i].recovered;
+		tabde.textContent = statedata[i].deaths;
+
+		tabrow.appendChild(tabst);
+		tabrow.appendChild(tabac);
+		tabrow.appendChild(tabre);
+		tabrow.appendChild(tabde);
+
+		tab.appendChild(tabrow);
+	}
+	
+}
+
+getData();
+</script>
+
+</body>
+</html>
+

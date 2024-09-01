@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        @keyframes anime {
+            from {
+                transform: rotateX(0) rotateY(45deg) rotateZ(0);
+            }
+
+            50% {
+                transform: rotateX(180deg) rotateY(45deg) rotateZ(180deg);
+
+            }
+
+            to {
+                transform: rotateX(360deg) rotateY(45deg) rotateZ(360deg);
+
+            }
+        }
+
+
+        .faces {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            animation: anime 10s linear infinite;
+            /* transform: rotate3d(1, 1, 1, 30deg); */
+            margin: auto;
+            top: 30vh
+        }
+
+        .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            pointer-events: none;
+        }
+
+        .front {
+            transform: translateZ(150px);
+        }
+
+        .back {
+            transform: translateZ(-150px);
+            /* transform: rotateY(180deg) translateZ(300px); */
+        }
+
+        .left {
+            transform: rotateY(90deg) translateZ(-150px);
+            /* transform: rotateY(-90deg) translateZ(300px); */
+        }
+
+        .right {
+            transform: rotateY(-90deg) translateZ(-150px);
+            /* transform: rotateY(90deg) translateZ(300px); */
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(150px);
+            /* transform: rotateX(90deg) translateZ(300px); */
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(150px);
+            /* transform: rotateX(-90deg) translateZ(300px); */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="faces">
+        <div class="face front">
+            <video width="300" height="300" autoplay loop>
+                <source src="../files/o.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="face back">
+            <video width="300" height="300" autoplay loop>
+                <source src="../files/o.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="face left">
+            <video width="300" height="300" autoplay loop>
+                <source src="../files/o.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="face right">
+            <video width="300" height="300" autoplay loop>
+                <source src="../files/o.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="face top">
+            <video width="300" height="300" autoplay loop>
+                <source src="../files/o.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="face bottom">
+            <video width="300" height="300" autoplay loop>
+                <source src="../files/o.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</body>
+
+</html>
